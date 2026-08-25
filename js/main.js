@@ -13,8 +13,8 @@
     { name: "Delta Electronics", logo: "assets/vendors/delta.png" },
     { name: "ABB", logo: "assets/vendors/abb.png" },
     { name: "Panasonic", logo: "assets/vendors/panasonic.png" },
-    { name: "Fuji Electric", logo: "assets/vendors/fuji-electric.png" },
-    { name: "Yaskawa", logo: "assets/vendors/yaskawa.png" },
+    { name: "Honeywell", logo: "assets/vendors/honeywell.png" },
+    { name: "Supcon", logo: "assets/vendors/supcon.png" },
     { name: "Keyence", logo: "assets/vendors/keyence.png" },
   ];
 
