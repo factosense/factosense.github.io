@@ -15,7 +15,7 @@
     <title>FactoSense | Operational Technology to Operational Intelligence</title>
     <meta
       name="description"
-      content="FactoSense connects any machine, any PLC, any vendor — and keeps your operational data on your own premises. Operational Technology to Operational Intelligence."
+      content="FactoSense turns Operational Technology into Operational Intelligence with predictive factory dashboards, OEE, downtime insights, reporting, alarms, logs and on-premises data control."
     >
     <link rel="icon" type="image/png" href="assets/logo/fs-logo-sm.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +39,10 @@
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link" href="#why">Why FactoSense</a></li>
-            <li class="nav-item"><a class="nav-link" href="#evidence">Evidence</a></li>
             <li class="nav-item"><a class="nav-link" href="#data">Your Data</a></li>
             <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
-            <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+            <li class="nav-item"><a class="nav-link" href="#predictive">Predictions</a></li>
+            <li class="nav-item"><a class="nav-link" href="#compare">Compare</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           </ul>
           <a class="btn btn-fs ms-lg-3" href="#demo">Book a Demo</a>
@@ -55,16 +55,17 @@
         <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
         <div class="container-xxl hero-grid">
           <div class="hero-copy reveal">
-            <div class="section-kicker"><span></span>Industrial intelligence. On your premises.</div>
-            <h1><span class="title-highlight">Operational Technology to Operational Intelligence</span></h1>
+            <div class="section-kicker"><span></span>A Funoon Lab product</div>
+            <p class="brand-line">Operational Technology to Operational Intelligence</p>
+            <h1><span class="title-highlight">Predictive Factory Intelligence, Built Around Your Machines.</span></h1>
             <p>
-              We believe operational intelligence has to come from your own data
-              and your own priorities, guided by the people who actually run the
-              plant. FactoSense connects to any machine, any PLC, any vendor, and
-              keeps everything running on your own premises.
+              FactoSense connects PLCs, machines and production lines to deliver
+              live dashboards, OEE visibility, downtime insights, reports,
+              alarms, notifications, logs and predictions from your own factory
+              data, on your premises.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-fs btn-lg" href="#demo">Connect your first machine</a>
+              <a class="btn btn-fs btn-lg" href="#demo">Book a Demo</a>
               <a class="btn btn-link-fs" href="#platform">See the platform</a>
             </div>
             <div class="hero-proof" aria-label="FactoSense deployment proof points">
@@ -74,7 +75,7 @@
               </div>
               <div>
                 <strong>10-15 yrs</strong>
-                <span>manufacturing software experience</span>
+                <span>Funoon Lab manufacturing software experience</span>
               </div>
             </div>
           </div>
@@ -95,20 +96,21 @@
                 <strong data-counter data-target="94">0</strong>
               </div>
               <div>
-                <small>Edge uptime</small>
-                <strong data-counter data-target="99">0</strong>
+                <small>Risk score</small>
+                <strong data-counter data-target="21">0</strong>
               </div>
             </div>
             <div class="screen-tabs" aria-hidden="true">
               <span class="active">Overview</span>
-              <span>Edges</span>
+              <span>Predictions</span>
               <span>Reports</span>
             </div>
             <canvas id="operationsChart" width="620" height="260"></canvas>
             <div class="signal-feed">
               <div><span>Machine source</span><strong>OPC-UA</strong></div>
               <div><span>Data location</span><strong>on premises</strong></div>
-              <div><span>Insight layer</span><strong>live</strong></div>
+              <div><span>Alert state</span><strong>2 active</strong></div>
+              <div><span>Prediction layer</span><strong>live</strong></div>
             </div>
             <div class="screen-footer">
               <span>Line 03 / Workspace Alpha</span>
@@ -118,38 +120,60 @@
         </div>
       </section>
 
+      <section class="trust-strip" aria-label="FactoSense trust points">
+        <div class="container-xxl trust-grid reveal">
+          <span><i class="bi bi-building-check" aria-hidden="true"></i>A Funoon Lab product</span>
+          <span><i class="bi bi-hdd-network" aria-hidden="true"></i>On-premises deployment</span>
+          <span><i class="bi bi-diagram-3" aria-hidden="true"></i>Vendor-neutral PLC connectivity</span>
+          <span><i class="bi bi-graph-up-arrow" aria-hidden="true"></i>Predictive dashboards</span>
+          <span><i class="bi bi-bell" aria-hidden="true"></i>Reports, alarms and logs</span>
+        </div>
+      </section>
+
       <section class="section-pad belief" id="why">
         <div class="container-xxl">
           <div class="section-heading-block reveal mb-5">
             <div class="section-kicker"><span></span>Why FactoSense</div>
-            <h2>Every plant is different.</h2>
+            <h2>Every plant is different. Its intelligence should be too.</h2>
             <p class="lead-copy">
-              What matters most on your floor is not something a generic
-              dashboard was ever built to know.
+              FactoSense is built for the exact machines, KPIs, alarms and
+              reporting rhythm your team already uses to run production.
             </p>
           </div>
 
           <div class="belief-panel reveal">
             <p>
-              Every production floor has its own critical machines, performance
-              targets and operating patterns. FactoSense helps your team turn
-              those local priorities into clear, real-time intelligence.
+              Operators, supervisors and plant leaders need one trusted view of
+              production: what is running, what is slowing down, what needs
+              attention now and what is likely to happen next.
             </p>
             <div class="belief-callout">
-              <span>How FactoSense starts</span>
+              <span>Factory intelligence loop</span>
               <div>
-                <strong>Connect live data</strong>
-                <p>Get machine signals flowing from the floor.</p>
+                <i class="bi bi-plug" aria-hidden="true"></i>
+                <strong>Connect</strong>
+                <p>Get machine, PLC and edge signals flowing from the floor.</p>
               </div>
               <div>
-                <strong>Define priorities</strong>
-                <p>Focus on the measures your team already trusts.</p>
+                <i class="bi bi-sliders" aria-hidden="true"></i>
+                <strong>Contextualize</strong>
+                <p>Map OEE, downtime, alarms, logs and reports to real plant KPIs.</p>
               </div>
               <div>
-                <strong>Build intelligence</strong>
-                <p>Shape dashboards and reports around your operation.</p>
+                <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+                <strong>Improve</strong>
+                <p>Shape dashboards, notifications and predictions around your operation.</p>
               </div>
             </div>
+          </div>
+
+          <div class="pain-grid" aria-label="Factory problems FactoSense solves">
+            <article class="pain-card reveal"><i class="bi bi-plug" aria-hidden="true"></i><strong>Disconnected machine data</strong><span>PLC and line information stays scattered across machines, files and people.</span></article>
+            <article class="pain-card reveal"><i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i><strong>Manual reporting</strong><span>Shift reports, production summaries and downtime sheets arrive too late.</span></article>
+            <article class="pain-card reveal"><i class="bi bi-clock-history" aria-hidden="true"></i><strong>Delayed downtime visibility</strong><span>Teams know a line stopped before they know why it stopped.</span></article>
+            <article class="pain-card reveal"><i class="bi bi-bell-slash" aria-hidden="true"></i><strong>Missed alarms</strong><span>Important thresholds and abnormal patterns do not reach the right team in time.</span></article>
+            <article class="pain-card reveal"><i class="bi bi-card-list" aria-hidden="true"></i><strong>Hard-to-trace logs</strong><span>Event history is difficult to search when maintenance or quality teams need context.</span></article>
+            <article class="pain-card reveal"><i class="bi bi-lightning-charge" aria-hidden="true"></i><strong>No early warning</strong><span>Most systems explain what happened, but do not predict what may happen next.</span></article>
           </div>
         </div>
       </section>
@@ -204,11 +228,16 @@
               <strong>79%</strong>
               <p>say poor data quality and integration limit what AI can do.</p>
             </article>
+            <article class="evidence-card evidence-card-solution reveal">
+              <span>FactoSense response</span>
+              <strong><i class="bi bi-hdd-network" aria-hidden="true"></i></strong>
+              <p>Local machine context, reporting, alarms, logs and predictions in one industrial layer.</p>
+            </article>
           </div>
 
           <div class="evidence-bridge reveal">
             <strong>FactoSense is designed for this missing layer.</strong>
-            <span>Live machine context, local data ownership and operational history in one place, so supervisors can move from “what happened?” to “why did it happen?” faster.</span>
+            <span>Live machine context, reports, alarms, logs, local data ownership and predictive intelligence in one place, so supervisors can move from "what happened?" to "what should we prevent next?" faster.</span>
           </div>
 
           <div class="oee-panel reveal" aria-labelledby="oeeTitle">
@@ -253,21 +282,27 @@
               <h2>Your data never leaves your floor.</h2>
               <p class="lead-copy muted">
                 FactoSense captures, processes and stores operational data
-                locally, so your factory stays in control.
+                locally, so your factory stays in control while still gaining
+                dashboards, reports, alarms, logs and predictions.
               </p>
             </div>
             <div class="col-lg-7">
               <div class="architecture-card reveal" aria-label="On premises architecture diagram">
                 <div class="premises-box">
                   <span>Your premises</span>
-                  <div class="architecture-flow">
-                    <div>Machines</div>
+                  <div class="architecture-flow architecture-flow-expanded">
+                    <div><small>01 Source</small><strong>Machines / PLCs</strong></div>
                     <i></i>
-                    <div>Edge device</div>
+                    <div><small>02 Capture</small><strong>Edge device</strong></div>
                     <i></i>
-                    <div>FactoSense processing</div>
+                    <div><small>03 Store</small><strong>Local processing + database</strong></div>
                     <i></i>
-                    <div>Dashboards + intelligence</div>
+                    <div><small>04 View</small><strong>Dashboards</strong></div>
+                    <div><small>05 Report</small><strong>Reports</strong></div>
+                    <div><small>06 Alert</small><strong>Alarms + notifications</strong></div>
+                    <div><small>07 Trace</small><strong>Logs</strong></div>
+                    <div><small>08 Predict</small><strong>Prediction engine</strong></div>
+                    <div class="coming-node"><small>09 Soon</small><strong>Future chatbot</strong></div>
                   </div>
                 </div>
               </div>
@@ -286,7 +321,8 @@
               <p class="lead-copy">
                 If it speaks OPC-UA, we connect to it. FactoSense works with
                 the PLCs, automation vendors, machines and protocols already on
-                your floor.
+                your floor, then turns those signals into dashboards, reports,
+                alerts, logs and predictions.
               </p>
             </div>
             <div class="col-lg-6">
@@ -301,7 +337,11 @@
           <div class="row g-4 align-items-end mb-5">
             <div class="col-lg-8 reveal">
               <div class="section-kicker"><span></span>The platform</div>
-              <h2>Everything in this section is live today.</h2>
+              <h2>A plant-ready command center for daily production decisions.</h2>
+              <p class="lead-copy muted">
+                Monitor the line, measure performance, report outcomes, alert
+                teams, trace events and predict risk from one local platform.
+              </p>
             </div>
           </div>
 
@@ -314,8 +354,9 @@
               <div class="product-preview-modes" aria-label="Dashboard view options">
                 <span class="active">OEE</span>
                 <span>Downtime</span>
-                <span>Quality</span>
-                <span>Speed</span>
+                <span>Reports</span>
+                <span>Alarms</span>
+                <span>Prediction</span>
               </div>
               <a class="product-preview-cta" href="#demo">Request a demo</a>
             </div>
@@ -329,6 +370,11 @@
                   loading="lazy"
                   decoding="async"
                 >
+                <figcaption class="shot-callouts">
+                  <span>OEE visibility</span>
+                  <span>Downtime trends</span>
+                  <span>Quality and rejects</span>
+                </figcaption>
               </figure>
               <figure class="dashboard-shot dashboard-shot-light">
                 <img
@@ -339,30 +385,51 @@
                   loading="lazy"
                   decoding="async"
                 >
+                <figcaption class="shot-callouts">
+                  <span>Production reports</span>
+                  <span>Alarm context</span>
+                  <span>Prediction-ready history</span>
+                </figcaption>
               </figure>
             </div>
           </div>
 
-          <div class="module-grid">
+          <div class="module-grid capability-grid">
             <article class="module-card reveal">
-              <small>Edges</small>
-              <h3>Monitor edge infrastructure.</h3>
+              <i class="bi bi-display" aria-hidden="true"></i>
+              <small>Monitor</small>
+              <h3>Dashboards, machines and edge health.</h3>
+              <p>See live production, connected assets and edge infrastructure in one place.</p>
             </article>
             <article class="module-card reveal">
-              <small>Machines</small>
-              <h3>Your connected asset registry.</h3>
+              <i class="bi bi-speedometer2" aria-hidden="true"></i>
+              <small>Measure</small>
+              <h3>OEE, downtime, speed, quality and losses.</h3>
+              <p>Track the KPIs that explain production performance shift by shift.</p>
             </article>
             <article class="module-card reveal">
-              <small>Recipes</small>
-              <h3>Map machine data without code.</h3>
+              <i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i>
+              <small>Report</small>
+              <h3>Shift reports and production summaries.</h3>
+              <p>Turn live and historical data into reports your team can act on.</p>
             </article>
             <article class="module-card reveal">
-              <small>Dashboards</small>
-              <h3>Turn live signals into operational views.</h3>
+              <i class="bi bi-bell" aria-hidden="true"></i>
+              <small>Alert</small>
+              <h3>Alarms, notifications and thresholds.</h3>
+              <p>Notify the right people when abnormal behavior or limits need action.</p>
             </article>
             <article class="module-card reveal">
-              <small>Reports</small>
-              <h3>Operational reporting from live production data.</h3>
+              <i class="bi bi-card-list" aria-hidden="true"></i>
+              <small>Trace</small>
+              <h3>Logs, event history and activity context.</h3>
+              <p>Follow machine events, changes and operational history when issues occur.</p>
+            </article>
+            <article class="module-card reveal">
+              <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+              <small>Predict</small>
+              <h3>Downtime risk, OEE drops and machine anomalies.</h3>
+              <p>Use existing data patterns to spot likely production risks earlier.</p>
             </article>
             <article class="module-proof reveal">
               <div class="proof-window">
@@ -379,33 +446,137 @@
         </div>
       </section>
 
+      <section class="section-pad predictive-section" id="predictive">
+        <div class="container-xxl">
+          <div class="predictive-grid">
+            <div class="reveal">
+              <div class="section-kicker"><span></span>Predictive intelligence</div>
+              <h2>Use existing factory data to see risk before it becomes downtime.</h2>
+              <p class="lead-copy">
+                FactoSense turns operational history into predictive dashboards
+                for downtime risk, OEE movement, machine anomalies and
+                maintenance planning.
+              </p>
+            </div>
+            <div class="prediction-panel reveal" aria-label="Predictive dashboard examples">
+              <div class="prediction-panel-head">
+                <span>Prediction signals</span>
+                <strong>From your existing operational history</strong>
+              </div>
+              <div><span>Downtime risk</span><strong>Likely within next shift</strong></div>
+              <div><span>OEE forecast</span><strong>Possible 6% drop</strong></div>
+              <div><span>Machine anomaly</span><strong>Rising cycle variance</strong></div>
+              <div><span>Maintenance risk</span><strong>Inspect before batch change</strong></div>
+            </div>
+          </div>
+
+          <div class="use-case-grid" aria-label="FactoSense practical use cases">
+            <article class="use-case reveal"><strong>OEE monitoring</strong><span>Availability, performance, quality and total production impact.</span></article>
+            <article class="use-case reveal"><strong>Downtime root cause</strong><span>Trace stoppages through machine data, alarms and event history.</span></article>
+            <article class="use-case reveal"><strong>Shift reporting</strong><span>Give production teams consistent summaries without manual reconciliation.</span></article>
+            <article class="use-case reveal"><strong>Alarm escalation</strong><span>Route threshold breaches and abnormal behavior to the right team.</span></article>
+            <article class="use-case reveal"><strong>Machine event logs</strong><span>Keep searchable operating history for engineering and maintenance teams.</span></article>
+            <article class="use-case reveal"><strong>Predictive downtime alerts</strong><span>Surface likely risk windows from current and historical patterns.</span></article>
+          </div>
+        </div>
+      </section>
+
       <section class="section-pad roadmap section-dark" id="roadmap">
         <div class="container-xxl">
           <div class="section-heading-block reveal mb-5">
-            <div class="section-kicker"><span></span>Roadmap</div>
-            <h2>Visibility today. Intelligence on your own data next.</h2>
+            <div class="section-kicker"><span></span>Available now / coming soon</div>
+            <h2>Visibility, reporting and predictions now. Conversational factory data next.</h2>
             <p class="lead-copy muted">
-              A practical path from live visibility to better decisions,
-              built on operational history your team owns.
+              FactoSense is already built around live operations and predictive
+              dashboards. The chatbot layer is in final development.
             </p>
           </div>
 
           <div class="roadmap-grid">
             <article class="road-card reveal">
-              <small>Now</small>
-              <h3>Connect and monitor</h3>
-              <p>Live operating visibility, assets, dashboards, users and workspaces.</p>
+              <small>Available now</small>
+              <h3>Connect, monitor and measure</h3>
+              <p>Machine connectivity, edge monitoring, live dashboards, OEE, downtime, users and workspaces.</p>
             </article>
             <article class="road-card reveal featured">
-              <small>Next</small>
-              <h3>Report and optimize</h3>
-              <p>Dynamic reporting, OEE, threshold rules, alarms, storage and cross-site context.</p>
+              <small>Available now</small>
+              <h3>Report, alert and predict</h3>
+              <p>Reporting, alarms, notifications, logs, thresholds and prediction on existing operational data.</p>
             </article>
             <article class="road-card reveal">
-              <small>Future</small>
-              <h3>AI on your data, on your premises</h3>
-              <p>Downtime risk, component health, maintenance recommendations and answers drawn from your own operational history.</p>
+              <small>In final development</small>
+              <h3>Ask your factory data</h3>
+              <p>A chatbot-style assistant for natural-language questions about OEE, downtime, alarms, reports, logs, shifts and machine trends.</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad comparison" id="compare">
+        <div class="container-xxl">
+          <div class="section-heading-block reveal mb-5">
+            <div class="section-kicker"><span></span>Competitive position</div>
+            <h2>Focused, local and predictive instead of broad, generic or cloud-first.</h2>
+            <p class="lead-copy">
+              FactoSense is built for teams that want modern industrial
+              intelligence without losing control of factory-owned data.
+            </p>
+          </div>
+
+          <div class="comparison-highlights reveal" aria-label="FactoSense competitive strengths">
+            <article><i class="bi bi-hdd-network" aria-hidden="true"></i><strong>Local by design</strong><span>Operational data remains under factory control.</span></article>
+            <article><i class="bi bi-bell" aria-hidden="true"></i><strong>Operationally complete</strong><span>Dashboards, reports, alarms, logs and notifications together.</span></article>
+            <article><i class="bi bi-graph-up-arrow" aria-hidden="true"></i><strong>Prediction-ready</strong><span>Insights are built from plant history and live machine behavior.</span></article>
+          </div>
+
+          <div class="comparison-grid reveal" role="table" aria-label="FactoSense comparison">
+            <div class="comparison-head" role="row">
+              <span role="columnheader">Alternative</span>
+              <span role="columnheader">Common limitation</span>
+              <span role="columnheader">FactoSense advantage</span>
+            </div>
+            <div role="row">
+              <span role="cell">Cloud-first platforms</span>
+              <span role="cell">Broad product suite, but factory data often moves outside the plant.</span>
+              <span role="cell">On-premises intelligence with live dashboards, reports, alerts and predictions.</span>
+            </div>
+            <div role="row">
+              <span role="cell">Manual Excel reporting</span>
+              <span role="cell">Slow, error-prone and disconnected from live machine behavior.</span>
+              <span role="cell">Automated production reports from machine and line data.</span>
+            </div>
+            <div role="row">
+              <span role="cell">Generic BI dashboards</span>
+              <span role="cell">Good charts, but weak machine context, alarms and operational traceability.</span>
+              <span role="cell">Industrial KPIs, OEE, downtime, logs and alarm context in one product.</span>
+            </div>
+            <div role="row">
+              <span role="cell">Alarm-only SCADA screens</span>
+              <span role="cell">Useful for immediate alerts, but limited reporting and prediction.</span>
+              <span role="cell">Alarms plus event history, notifications, reports and predictive risk visibility.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad deployment section-dark" id="deployment">
+        <div class="container-xxl">
+          <div class="section-heading-block reveal mb-5">
+            <div class="section-kicker"><span></span>Deployment journey</div>
+            <h2>Start with one machine. Expand with confidence.</h2>
+            <p class="lead-copy muted">
+              The first engagement is designed to prove value quickly, then
+              scale across more lines, workspaces or sites.
+            </p>
+          </div>
+
+          <div class="journey-grid" aria-label="FactoSense deployment steps">
+            <article class="journey-step reveal"><span>01</span><strong>Discovery call</strong><p>Understand your machines, KPIs, current reporting and priority pain points.</p></article>
+            <article class="journey-step reveal"><span>02</span><strong>Connect first machine</strong><p>Bring PLC or machine signals into the local FactoSense environment.</p></article>
+            <article class="journey-step reveal"><span>03</span><strong>Map KPIs and alarms</strong><p>Configure OEE, downtime, thresholds, notifications and key data points.</p></article>
+            <article class="journey-step reveal"><span>04</span><strong>Build dashboards and reports</strong><p>Shape live views, shift reports and production summaries around your team.</p></article>
+            <article class="journey-step reveal"><span>05</span><strong>Validate predictions</strong><p>Review downtime, OEE, anomaly and maintenance-risk signals against real history.</p></article>
+            <article class="journey-step reveal"><span>06</span><strong>Expand line or site</strong><p>Roll the proven setup into more assets, teams and operational workflows.</p></article>
           </div>
         </div>
       </section>
@@ -415,18 +586,20 @@
           <div class="about-grid">
             <div class="reveal">
               <div class="section-kicker"><span></span>About</div>
-              <h2>Ten to fifteen years building manufacturing software.</h2>
+              <h2>FactoSense is a focused product from Funoon Lab.</h2>
             </div>
             <div class="about-copy reveal">
               <p>
-                FactoSense is built by Funoon Lab. We have spent ten to fifteen
-                years making software for manufacturers: people who have no
-                patience for anything that does not work on day one.
+                Funoon Lab is the parent company behind FactoSense. We have
+                spent ten to fifteen years building software for manufacturers:
+                teams that need practical systems, reliable data and tools that
+                fit the way plants actually run.
               </p>
               <p>
-                FactoSense is what we would build if we started over: everything
-                we have learned, none of the vendor lock-in, none of the
-                compromises.
+                FactoSense brings that experience into one industrial
+                intelligence product: live dashboards, OEE and downtime
+                analytics, reporting, alarms, logs, predictions and local data
+                control.
               </p>
               <a href="mailto:info@funoonlab.com">info@funoonlab.com</a>
             </div>
@@ -439,8 +612,15 @@
           <div class="cta-panel demo-panel">
             <div class="demo-copy">
               <img src="assets/logo/fs-logo-light.png" alt="FactoSense" loading="lazy" decoding="async">
-              <h2>Let's connect your first machine.</h2>
-              <p>Fifteen minutes. No commitment. See your own data live.</p>
+              <span class="parent-note">A Funoon Lab product</span>
+              <h2>Book a demo for your production line.</h2>
+              <p>See how FactoSense can connect machine data, build dashboards, configure reports and alarms, and surface predictive insights from your own operational history.</p>
+              <div class="next-steps" aria-label="What happens after a demo request">
+                <strong>What happens next?</strong>
+                <span>1. We schedule a short discovery call.</span>
+                <span>2. We review your machines, KPIs, alarms and reporting needs.</span>
+                <span>3. We plan the first-machine connection and demo path.</span>
+              </div>
             </div>
             <form class="demo-form" id="demoForm">
               <div class="form-grid">
@@ -456,9 +636,13 @@
                   Company
                   <input type="text" name="company" autocomplete="organization" required>
                 </label>
+                <label>
+                  Role
+                  <input type="text" name="role" autocomplete="organization-title">
+                </label>
                 <label class="full">
                   What should FactoSense help with first?
-                  <textarea name="message" rows="4" placeholder="A machine, dynamic reporting, OEE, visibility, downtime, maintenance planning..." required></textarea>
+                  <textarea name="message" rows="4" placeholder="OEE visibility, downtime prediction, reports, alarms, logs, notifications, maintenance planning..." required></textarea>
                 </label>
               </div>
               <button class="btn btn-fs btn-lg w-100" type="submit">Send demo request</button>
@@ -473,10 +657,13 @@
         <div class="footer-main">
           <div class="footer-brand">
             <img src="assets/logo/fs-logo-light.png" alt="FactoSense" loading="lazy" decoding="async">
+            <span class="parent-note">A Funoon Lab product</span>
+            <strong class="footer-tagline">Operational Technology to Operational Intelligence</strong>
             <p>Connect machines, edge devices and teams through local operational intelligence that stays on your factory floor.</p>
             <div class="footer-proof">
               <span><i class="bi bi-hdd-network" aria-hidden="true"></i>On-premises deployment</span>
               <span><i class="bi bi-diagram-3" aria-hidden="true"></i>Vendor-neutral PLC connectivity</span>
+              <span><i class="bi bi-bell" aria-hidden="true"></i>Reports, alarms, notifications and logs</span>
               <span><i class="bi bi-shield-check" aria-hidden="true"></i>Factory data stays under your control</span>
             </div>
           </div>
@@ -485,10 +672,13 @@
             <h2>Company</h2>
             <a href="#why">Why FactoSense</a>
             <a href="#evidence">Operations gap</a>
+            <a href="#platform">Platform</a>
+            <a href="#predictive">Predictions</a>
             <a href="#data">Data ownership</a>
-            <a href="#roadmap">Product roadmap</a>
-            <a href="#about">About</a>
-            <a href="#demo">Book a Demo</a>
+              <a href="#compare">Compare</a>
+              <a href="#deployment">Deployment</a>
+              <a href="#about">About</a>
+              <a href="#demo">Book a Demo</a>
           </nav>
 
           <nav class="footer-column footer-column-wide" aria-label="Platform">
@@ -497,10 +687,11 @@
               <a href="#connectivity"><span>Connectivity</span>Any PLC, machine or automation vendor</a>
               <a href="#platform"><span>Dashboards</span>Live operating visibility for teams</a>
               <a href="#platform"><span>Edges</span>Monitor shop-floor infrastructure</a>
-              <a href="#platform"><span>Reports</span>OEE, trends and production context</a>
+              <a href="#platform"><span>Reports</span>Shift and production summaries</a>
+              <a href="#platform"><span>Alarms</span>Thresholds, notifications and event context</a>
+              <a href="#platform"><span>Logs</span>Traceable machine and operational history</a>
               <a href="#data"><span>Data ownership</span>Local processing and storage</a>
-              <a href="#evidence"><span>Root cause</span>Immediate visibility into floor issues</a>
-              <a href="#roadmap"><span>Intelligence</span>AI-ready maintenance insights</a>
+              <a href="#predictive"><span>Predictions</span>Downtime, OEE and anomaly risk</a>
             </div>
           </nav>
 

@@ -329,7 +329,7 @@
     if (!form) return;
 
     function updateFormState() {
-      const trackedFields = ["name", "email", "company", "message"];
+      const trackedFields = ["name", "email", "company", "role", "message"];
       const data = new FormData(form);
 
       trackedFields.forEach((field) => {
@@ -359,6 +359,7 @@
         `Name: ${data.get("name") || ""}`,
         `Work email: ${data.get("email") || ""}`,
         `Company: ${data.get("company") || ""}`,
+        `Role: ${data.get("role") || ""}`,
         "",
         "What FactoSense should help with first:",
         data.get("message") || "",
