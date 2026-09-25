@@ -1461,6 +1461,22 @@ h3 {
   border-color: rgba(0, 172, 167, 0.55);
 }
 
+.demo-form .form-status {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: 1px solid rgba(0, 172, 167, 0.55);
+  border-radius: var(--radius);
+  background: rgba(0, 172, 167, 0.14);
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.demo-form .form-status.is-error {
+  border-color: rgba(255, 107, 107, 0.6);
+  background: rgba(255, 107, 107, 0.14);
+}
+
 .footer {
   padding: clamp(58px, 7vw, 84px) 0 28px;
   background:

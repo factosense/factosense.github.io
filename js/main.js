@@ -329,7 +329,7 @@
     if (!form) return;
 
     function updateFormState() {
-      const trackedFields = ["name", "email", "company", "message"];
+      const trackedFields = ["name", "email", "phone", "company", "message"];
       const data = new FormData(form);
 
       trackedFields.forEach((field) => {
@@ -343,28 +343,54 @@
     form.addEventListener("change", updateFormState);
     updateFormState();
 
-    form.addEventListener("submit", (event) => {
+    const endpoint = "https://script.google.com/macros/s/AKfycbyJlz8oA76StBjC2pTJCw81QGJ4tjuNA4a-LDZjHSvy13g4_IK7nss8-6GWnwvb85FI/exec";
+    const button = form.querySelector('button[type="submit"]');
+    const status = document.createElement("div");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.hidden = true;
+    form.appendChild(status);
+
+    function showStatus(text, isError) {
+      status.textContent = text;
+      status.classList.toggle("is-error", isError);
+      status.hidden = false;
+    }
+
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
       const data = new FormData(form);
-      const subject = `FactoSense demo request - ${data.get("company") || "New customer"}`;
-      const body = [
-        "Hello FactoSense team,",
-        "",
-        "I would like to book a demo.",
-        "",
-        `Name: ${data.get("name") || ""}`,
-        `Work email: ${data.get("email") || ""}`,
-        `Company: ${data.get("company") || ""}`,
-        "",
-        "What FactoSense should help with first:",
-        data.get("message") || "",
-      ].join("\n");
+      const payload = {
+        name: String(data.get("name") || "").trim(),
+        email: String(data.get("email") || "").trim(),
+        phone: String(data.get("phone") || "").trim(),
+        company: String(data.get("company") || "").trim(),
+        message: String(data.get("message") || "").trim(),
+      };
 
-      window.location.href = `mailto:info@funoonlab.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      button.disabled = true;
+      status.hidden = true;
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+        });
+        const result = await response.json();
+        if (!result.success) throw new Error(result.error || "Submission failed");
+        form.reset();
+        updateFormState();
+        showStatus("Thanks! Your demo request has been received. We will get back to you shortly.", false);
+      } catch (error) {
+        console.error(error);
+        showStatus("Something went wrong sending your request. Please try again or email us at info@funoonlab.com.", true);
+      } finally {
+        button.disabled = false;
+      }
     });
   }
 
