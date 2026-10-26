@@ -1179,7 +1179,12 @@ h3 {
   padding: 0;
 }
 
+.dashboard-shot picture {
+  display: block;
+}
+
 .dashboard-shot img {
+  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
