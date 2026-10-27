@@ -1392,6 +1392,7 @@ h3 {
 
 .cta-panel img {
   width: 168px;
+  height: auto;
   margin-bottom: 44px;
 }
 
@@ -1500,6 +1501,7 @@ h3 {
 
 .footer-brand img {
   width: 172px;
+  height: auto;
 }
 
 .footer-brand p {
