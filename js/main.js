@@ -18,25 +18,6 @@
     { name: "Keyence", logo: "assets/vendors/keyence.png" },
   ];
 
-  function fitCanvas(canvas) {
-    const ctx = canvas.getContext("2d");
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    function fit() {
-      const rect = canvas.getBoundingClientRect();
-      canvas.width = Math.max(1, Math.floor(rect.width * dpr));
-      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-
-    fit();
-    window.addEventListener("resize", fit);
-
-    return {
-      ctx,
-      size: () => canvas.getBoundingClientRect(),
-    };
-  }
 
   function setupReveal() {
     const items = document.querySelectorAll(".reveal");
@@ -69,7 +50,7 @@
   function setupNav() {
     const nav = document.querySelector("[data-site-nav]");
     if (!nav) return;
-    const navItems = Array.from(document.querySelectorAll(".navbar-collapse a[href^='#']"))
+    const navItems = Array.from(document.querySelectorAll(".nav-link[href^='#']"))
       .map((link) => {
         const section = document.querySelector(link.getAttribute("href"));
         return section ? { link, section } : null;
@@ -87,7 +68,7 @@
     }
 
     function updateNavState() {
-      nav.classList.toggle("nav-scrolled", window.scrollY > 24);
+      nav.classList.toggle("is-scrolled", window.scrollY > 24);
 
       const activationLine = nav.offsetHeight + Math.min(window.innerHeight * 0.22, 180);
       const current = navItems.reduce((active, item) => {
@@ -114,12 +95,23 @@
     window.addEventListener("resize", updateNavState, { passive: true });
     updateNavState();
 
-    document.querySelectorAll(".navbar-collapse .nav-link, .navbar-collapse .btn").forEach((link) => {
-      link.addEventListener("click", () => {
-        const menu = document.querySelector(".navbar-collapse.show");
-        if (!menu || !window.bootstrap) return;
-        window.bootstrap.Collapse.getOrCreateInstance(menu).hide();
-      });
+    const toggle = nav.querySelector(".nav-toggle");
+
+    function setMenu(open) {
+      nav.classList.toggle("is-open", open);
+      if (toggle) toggle.setAttribute("aria-expanded", String(open));
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+    }
+
+    nav.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setMenu(false);
     });
   }
 
@@ -160,168 +152,29 @@
     counters.forEach((counter) => observer.observe(counter));
   }
 
-  function setupHeroCanvas() {
-    const canvas = document.getElementById("heroCanvas");
-    if (!canvas) return;
-    const { ctx, size } = fitCanvas(canvas);
-    let active = !reduceMotion;
-    let frameId = 0;
-    const nodes = Array.from({ length: 46 }, () => ({
-      x: Math.random(),
-      y: Math.random(),
-      vx: (Math.random() - 0.5) * 0.00028,
-      vy: (Math.random() - 0.5) * 0.00028,
-    }));
 
-    function draw() {
-      const { width: w, height: h } = size();
-      ctx.clearRect(0, 0, w, h);
-
-      nodes.forEach((node) => {
-        node.x += node.vx;
-        node.y += node.vy;
-        if (node.x < 0 || node.x > 1) node.vx *= -1;
-        if (node.y < 0 || node.y > 1) node.vy *= -1;
-      });
-
-      for (let i = 0; i < nodes.length; i += 1) {
-        for (let j = i + 1; j < nodes.length; j += 1) {
-          const a = nodes[i];
-          const b = nodes[j];
-          const dx = (a.x - b.x) * w;
-          const dy = (a.y - b.y) * h;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist > 150) continue;
-          ctx.strokeStyle = `rgba(0, 172, 167, ${(1 - dist / 150) * 0.22})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x * w, a.y * h);
-          ctx.lineTo(b.x * w, b.y * h);
-          ctx.stroke();
-        }
-      }
-
-      nodes.forEach((node, index) => {
-        ctx.beginPath();
-        ctx.arc(node.x * w, node.y * h, index % 4 === 0 ? 2.4 : 1.7, 0, Math.PI * 2);
-        ctx.fillStyle = index % 3 === 0 ? "rgba(156, 239, 237, .76)" : "rgba(0, 172, 167, .72)";
-        ctx.fill();
-      });
-
-      if (active) frameId = requestAnimationFrame(draw);
-    }
-
-    draw();
-
-    if ("IntersectionObserver" in window && !reduceMotion) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          active = entry.isIntersecting;
-          if (active && !frameId) draw();
-          if (!active && frameId) {
-            cancelAnimationFrame(frameId);
-            frameId = 0;
-          }
-        },
-        { rootMargin: "160px" }
-      );
-      observer.observe(canvas);
-    }
-  }
-
-  function setupOperationsChart() {
-    const canvas = document.getElementById("operationsChart");
-    if (!canvas) return;
-    const { ctx, size } = fitCanvas(canvas);
-    let active = !reduceMotion;
-    let frameId = 0;
-    const points = Array.from({ length: 64 }, (_, index) => 62 + Math.sin(index * 0.28) * 13 + Math.random() * 8);
-    let frame = 0;
-
-    function update() {
-      points.shift();
-      const last = points[points.length - 1];
-      points.push(Math.max(34, Math.min(96, last + (Math.random() - 0.46) * 7)));
-    }
-
-    function draw() {
-      frame += 1;
-      if (frame % 34 === 0) update();
-
-      const { width: w, height: h } = size();
-      ctx.clearRect(0, 0, w, h);
-
-      ctx.strokeStyle = "rgba(255, 255, 255, .08)";
-      ctx.lineWidth = 1;
-      for (let y = 0; y <= 4; y += 1) {
-        ctx.beginPath();
-        ctx.moveTo(0, (h / 4) * y);
-        ctx.lineTo(w, (h / 4) * y);
-        ctx.stroke();
-      }
-
-      const min = 20;
-      const max = 100;
-      const point = (index, value) => [
-        (index / (points.length - 1)) * w,
-        h - ((value - min) / (max - min)) * h,
-      ];
-
-      ctx.beginPath();
-      points.forEach((value, index) => {
-        const [x, y] = point(index, value);
-        if (index === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      });
-      ctx.strokeStyle = "#00aca7";
-      ctx.lineWidth = 3;
-      ctx.lineJoin = "round";
-      ctx.lineCap = "round";
-      ctx.shadowColor = "rgba(0, 172, 167, .45)";
-      ctx.shadowBlur = 14;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      const tail = point(points.length - 1, points[points.length - 1]);
-      ctx.beginPath();
-      ctx.arc(tail[0], tail[1], 5, 0, Math.PI * 2);
-      ctx.fillStyle = "#9cefed";
-      ctx.fill();
-
-      if (active) frameId = requestAnimationFrame(draw);
-    }
-
-    draw();
-
-    if ("IntersectionObserver" in window && !reduceMotion) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          active = entry.isIntersecting;
-          if (active && !frameId) draw();
-          if (!active && frameId) {
-            cancelAnimationFrame(frameId);
-            frameId = 0;
-          }
-        },
-        { rootMargin: "120px" }
-      );
-      observer.observe(canvas);
-    }
-  }
 
   function setupVendorWall() {
     const wall = document.querySelector("[data-vendor-wall]");
     if (!wall) return;
 
-    wall.innerHTML = vendors
-      .map(
-        (vendor) => `
-          <div class="vendor-logo">
-            <img src="${vendor.logo}" alt="${vendor.name} logo" width="280" height="116" loading="lazy" decoding="async">
-          </div>
-        `
-      )
-      .join("");
+    const logo = (vendor, hidden) => `
+      <div class="vendor-logo"${hidden ? ' aria-hidden="true"' : ""}>
+        <img src="${vendor.logo}" alt="${hidden ? "" : `${vendor.name} logo`}" width="280" height="116" loading="lazy" decoding="async">
+      </div>
+    `;
+    // The track scrolls by half its width, so it holds the row four times; only the first copy is announced.
+    const row = (list, reverse) => `
+      <div class="marquee-track${reverse ? " marquee-track-reverse" : ""}">
+        ${list.map((vendor) => logo(vendor, false)).join("")}
+        ${[...list, ...list, ...list].map((vendor) => logo(vendor, true)).join("")}
+      </div>
+    `;
+    const half = Math.ceil(vendors.length / 2);
+    const first = vendors.slice(0, half);
+    const second = vendors.slice(half);
+
+    wall.innerHTML = row(first, false) + row(second, true);
   }
 
   function setupDemoForm() {
@@ -398,8 +251,6 @@
     setupReveal();
     setupNav();
     setupCounters();
-    setupHeroCanvas();
-    setupOperationsChart();
     setupVendorWall();
     setupDemoForm();
   });

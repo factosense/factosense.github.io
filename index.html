@@ -23,7 +23,7 @@
     <link rel="canonical" href="https://www.factosense.com/">
     <meta name="application-name" content="FactoSense">
     <meta name="apple-mobile-web-app-title" content="FactoSense">
-    <meta name="theme-color" content="#081121">
+    <meta name="theme-color" content="#001121">
     <meta name="format-detection" content="telephone=no">
 
     <meta property="og:locale" content="en_US">
@@ -120,54 +120,58 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <div class="site-bg" aria-hidden="true"></div>
+    <a class="skip-link" href="#home">Skip to content</a>
 
-    <nav class="navbar navbar-expand-lg fixed-top fs-nav" data-site-nav>
-      <div class="container-xxl">
-        <a class="navbar-brand" href="#home" aria-label="FactoSense home">
-          <img src="assets/logo/fs-logo-dark.png" alt="FactoSense" width="1040" height="194" decoding="async">
+    <header class="site-header" data-site-nav>
+      <nav class="container nav" aria-label="Main">
+        <a class="brand" href="#home" aria-label="FactoSense home">
+          <img src="assets/logo/fs-logo-light.png" alt="FactoSense" width="1040" height="194" decoding="async">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#why">Why FactoSense</a></li>
-            <li class="nav-item"><a class="nav-link" href="#evidence">Evidence</a></li>
-            <li class="nav-item"><a class="nav-link" href="#data">Your Data</a></li>
-            <li class="nav-item"><a class="nav-link" href="#platform">Platform</a></li>
-            <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          </ul>
-          <a class="btn btn-fs ms-lg-3" href="#demo">Book a Demo</a>
+        <div class="nav-links" id="mainNav">
+          <a class="nav-link" href="#why">Why FactoSense</a>
+          <a class="nav-link" href="#evidence">Evidence</a>
+          <a class="nav-link" href="#data">Your Data</a>
+          <a class="nav-link" href="#platform">Platform</a>
+          <a class="nav-link" href="#roadmap">Roadmap</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="btn btn-primary nav-cta-mobile" href="#demo">Book a Demo</a>
         </div>
-      </div>
-    </nav>
+        <a class="btn btn-primary nav-cta" href="#demo">Book a Demo</a>
+        <button class="nav-toggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </nav>
+    </header>
 
     <main id="home">
-      <section class="hero section-dark">
-        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
-        <div class="container-xxl hero-grid">
-          <div class="hero-copy reveal">
-            <div class="section-kicker"><span></span>Industrial intelligence. On your premises.</div>
-            <h1><span class="title-highlight">Operational Technology to Operational Intelligence</span></h1>
-            <p>
+      <section class="hero">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
+        <div class="aurora aurora-teal" aria-hidden="true"></div>
+        <div class="aurora aurora-orange" aria-hidden="true"></div>
+
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <div class="pill in d1"><span class="live-dot"></span>Industrial intelligence. On your premises.</div>
+            <h1 class="in d2">Operational Technology to <span class="shine">Operational Intelligence</span></h1>
+            <div class="hero-rule" aria-hidden="true"></div>
+            <p class="in d3">
               We believe operational intelligence has to come from your own data
               and your own priorities, guided by the people who actually run the
               plant. FactoSense connects to any machine, any PLC, any vendor, and
               keeps everything running on your own premises.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-fs btn-lg" href="#demo">Connect your first machine</a>
-              <a class="btn btn-link-fs" href="#platform">See the platform</a>
+            <div class="hero-actions in d4">
+              <a class="btn btn-primary btn-lg" href="#demo">Connect your first machine
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="#platform">See the platform</a>
             </div>
-            <div class="hero-proof" aria-label="FactoSense deployment proof points">
+            <div class="hero-proof in d5" aria-label="FactoSense deployment proof points">
               <div>
                 <strong>15 min</strong>
                 <span>first edge configured remotely</span>
@@ -179,155 +183,200 @@
             </div>
           </div>
 
-          <div class="command-center reveal" aria-label="Illustrative live factory dashboard">
-            <div class="panel-top">
-              <span class="live-dot"></span>
-              <span>FactoSense platform preview</span>
-              <strong>ONLINE</strong>
-            </div>
-            <div class="metric-row">
-              <div>
-                <small>OEE</small>
-                <strong data-counter data-target="86">0</strong>
+          <div class="in d4">
+            <div class="panel-shell">
+              <div class="ring" aria-hidden="true"></div>
+              <div class="panel" aria-label="Illustrative live factory dashboard">
+                <div class="panel-top">
+                  <span class="live-dot"></span>
+                  <span>FactoSense platform preview</span>
+                  <strong>ONLINE</strong>
+                </div>
+                <div class="metric-row">
+                  <div class="metric">
+                    <small>OEE</small>
+                    <strong><span data-counter data-target="86">86</span><em>%</em></strong>
+                  </div>
+                  <div class="metric">
+                    <small>Availability</small>
+                    <strong><span data-counter data-target="94">94</span><em>%</em></strong>
+                  </div>
+                  <div class="metric">
+                    <small>Edge uptime</small>
+                    <strong><span data-counter data-target="99">99</span><em>%</em></strong>
+                  </div>
+                </div>
+                <div class="screen-tabs" aria-hidden="true">
+                  <span class="active">Overview</span>
+                  <span>Edges</span>
+                  <span>Reports</span>
+                </div>
+                <div class="chart" aria-hidden="true">
+                  <svg viewBox="0 0 600 200" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="fsArea" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#2ad2cc" stop-opacity="0.35"/>
+                        <stop offset="1" stop-color="#2ad2cc" stop-opacity="0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0 50H600M0 100H600M0 150H600" stroke="rgba(255,255,255,0.06)" stroke-width="1" fill="none"/>
+                    <path class="area" d="M0 120 C40 90 70 70 100 95 S160 150 200 130 S260 60 300 70 S360 140 400 120 S470 50 500 60 S560 120 600 96 L600 200 L0 200 Z" fill="url(#fsArea)"/>
+                    <path class="draw" d="M0 120 C40 90 70 70 100 95 S160 150 200 130 S260 60 300 70 S360 140 400 120 S470 50 500 60 S560 120 600 96" fill="none" stroke="#2ad2cc" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+                    <path class="draw" d="M0 160 C60 150 90 140 140 150 S230 170 280 150 S380 120 430 135 S520 160 600 140" fill="none" stroke="#f58214" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.8" vector-effect="non-scaling-stroke"/>
+                  </svg>
+                  <div class="scan"></div>
+                </div>
+                <div class="signal-feed">
+                  <div><span>Machine source</span><strong>OPC-UA</strong></div>
+                  <div><span>Data location</span><strong>on premises</strong></div>
+                  <div><span>Insight layer</span><strong>live</strong></div>
+                </div>
+                <div class="screen-footer">
+                  <span>Line 03 / Workspace Alpha</span>
+                  <strong>Local server</strong>
+                </div>
               </div>
-              <div>
-                <small>Availability</small>
-                <strong data-counter data-target="94">0</strong>
-              </div>
-              <div>
-                <small>Edge uptime</small>
-                <strong data-counter data-target="99">0</strong>
-              </div>
-            </div>
-            <div class="screen-tabs" aria-hidden="true">
-              <span class="active">Overview</span>
-              <span>Edges</span>
-              <span>Reports</span>
-            </div>
-            <canvas id="operationsChart" width="620" height="260"></canvas>
-            <div class="signal-feed">
-              <div><span>Machine source</span><strong>OPC-UA</strong></div>
-              <div><span>Data location</span><strong>on premises</strong></div>
-              <div><span>Insight layer</span><strong>live</strong></div>
-            </div>
-            <div class="screen-footer">
-              <span>Line 03 / Workspace Alpha</span>
-              <strong>Local server</strong>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section-pad belief" id="why">
-        <div class="container-xxl">
-          <div class="section-heading-block reveal mb-5">
-            <div class="section-kicker"><span></span>Why FactoSense</div>
-            <h2>Every plant is different.</h2>
-            <p class="lead-copy">
+      <section class="section section-white" id="why">
+        <div class="container stack">
+          <div class="section-head reveal">
+            <span class="eyebrow">Why FactoSense</span>
+            <h2 class="display">Every plant is different.</h2>
+            <p class="lead">
               What matters most on your floor is not something a generic
               dashboard was ever built to know.
             </p>
           </div>
 
-          <div class="belief-panel reveal">
-            <p>
-              Every production floor has its own critical machines, performance
-              targets and operating patterns. FactoSense helps your team turn
-              those local priorities into clear, real-time intelligence.
-            </p>
-            <div class="belief-callout">
-              <span>How FactoSense starts</span>
-              <div>
-                <strong>Connect live data</strong>
-                <p>Get machine signals flowing from the floor.</p>
+          <div class="grid-5-7 align-stretch reveal">
+            <div class="belief-card">
+              <div class="glow" aria-hidden="true"></div>
+              <p>
+                Every production floor has its own critical machines, performance
+                targets and operating patterns. FactoSense helps your team turn
+                those local priorities into clear, real-time intelligence.
+              </p>
+            </div>
+            <div class="steps">
+              <span class="steps-label">How FactoSense starts</span>
+              <div class="card card-light step">
+                <span class="icon-tile">01</span>
+                <div>
+                  <strong>Connect live data</strong>
+                  <p>Get machine signals flowing from the floor.</p>
+                </div>
               </div>
-              <div>
-                <strong>Define priorities</strong>
-                <p>Focus on the measures your team already trusts.</p>
+              <div class="card card-light step">
+                <span class="icon-tile">02</span>
+                <div>
+                  <strong>Define priorities</strong>
+                  <p>Focus on the measures your team already trusts.</p>
+                </div>
               </div>
-              <div>
-                <strong>Build intelligence</strong>
-                <p>Shape dashboards and reports around your operation.</p>
+              <div class="card card-light step">
+                <span class="icon-tile">03</span>
+                <div>
+                  <strong>Build intelligence</strong>
+                  <p>Shape dashboards and reports around your operation.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section-pad section-dark evidence-section" id="evidence" aria-labelledby="evidenceTitle">
-        <div class="container-xxl">
-          <div class="evidence-header reveal">
-            <div>
-              <div class="section-kicker"><span></span>The operations gap</div>
-              <h2 id="evidenceTitle">Most plants are not short on effort. They are short on immediate answers.</h2>
+      <section class="section section-dark evidence" id="evidence" aria-labelledby="evidenceTitle">
+        <div class="container stack">
+          <div class="grid-2 align-end reveal">
+            <div class="section-head">
+              <span class="eyebrow">The operations gap</span>
+              <h2 class="display" id="evidenceTitle">Most plants are not short on effort. They are short on immediate answers.</h2>
             </div>
-            <p class="lead-copy muted">
+            <div class="section-head">
               <span class="evidence-badge">May 2026 survey · 600+ manufacturers</span>
-              A 2026 L2L survey of 600+ U.S. manufacturing leaders points to the same bottleneck FactoSense is built around:
-              disconnected shop-floor data, delayed reporting and root-cause visibility that arrives too late.
-            </p>
+              <p class="lead">
+                A 2026 L2L survey of 600+ U.S. manufacturing leaders points to the same bottleneck FactoSense is built around:
+                disconnected shop-floor data, delayed reporting and root-cause visibility that arrives too late.
+              </p>
+            </div>
           </div>
 
           <div class="evidence-grid" aria-label="Manufacturing data and operations gap findings">
-            <article class="evidence-card evidence-card-primary reveal">
+            <article class="card stat stat-primary reveal">
               <span>Root cause visibility</span>
               <strong>9%</strong>
-              <p>can find the root cause of a shop-floor issue immediately.</p>
+              <div>
+                <div class="meter" aria-hidden="true"><i style="--v: 9%"></i></div>
+                <p>can find the root cause of a shop-floor issue immediately.</p>
+              </div>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat reveal">
               <span>Operational knowledge</span>
               <strong>88%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 88%"></i></div>
               <p>say critical know-how disappears when experienced staff leave.</p>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat reveal">
               <span>Reporting delays</span>
               <strong>74%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 74%"></i></div>
               <p>are held back by delayed reports that slow production decisions.</p>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat reveal">
               <span>Manual reconciliation</span>
               <strong>65%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 65%"></i></div>
               <p>of frontline supervisors lose up to 4 hours per shift reconciling data.</p>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat reveal">
               <span>Manual entry</span>
               <strong>50%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 50%"></i></div>
               <p>of plants still rely on manual frontline data entry.</p>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat stat-wide reveal">
               <span>Disconnected systems</span>
               <strong>75%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 75%"></i></div>
               <p>of workers juggle multiple systems to get through daily operations.</p>
             </article>
-            <article class="evidence-card reveal">
+            <article class="card stat stat-wide reveal">
               <span>AI readiness</span>
               <strong>79%</strong>
+              <div class="meter" aria-hidden="true"><i style="--v: 79%"></i></div>
               <p>say poor data quality and integration limit what AI can do.</p>
             </article>
           </div>
 
           <div class="evidence-bridge reveal">
+            <span class="live-dot" aria-hidden="true"></span>
             <strong>FactoSense is designed for this missing layer.</strong>
             <span>Live machine context, local data ownership and operational history in one place, so supervisors can move from “what happened?” to “why did it happen?” faster.</span>
           </div>
 
           <div class="oee-panel reveal" aria-labelledby="oeeTitle">
-            <div>
-              <span>OEE reality check</span>
-              <h3 id="oeeTitle">Even strong individual scores compound into a lower operating result.</h3>
-              <p>
-                If availability, performance and quality are each 90%, the line does not run at 90% OEE.
-                The multiplication lands at 73%.
-              </p>
-            </div>
-            <div class="oee-equation" aria-label="90 percent availability times 90 percent performance times 90 percent quality equals 73 percent OEE">
-              <span class="oee-term"><strong>90%</strong><span>Availability</span></span>
-              <i aria-hidden="true">×</i>
-              <span class="oee-term"><strong>90%</strong><span>Performance</span></span>
-              <i aria-hidden="true">×</i>
-              <span class="oee-term"><strong>90%</strong><span>Quality</span></span>
-              <i aria-hidden="true">=</i>
-              <span class="oee-term"><strong class="result">73%</strong><span>OEE</span></span>
+            <div class="grid-2">
+              <div class="oee-copy">
+                <span class="eyebrow">OEE reality check</span>
+                <h3 id="oeeTitle">Even strong individual scores compound into a lower operating result.</h3>
+                <p>
+                  If availability, performance and quality are each 90%, the line does not run at 90% OEE.
+                  The multiplication lands at 73%.
+                </p>
+              </div>
+              <div class="oee-equation" aria-label="90 percent availability times 90 percent performance times 90 percent quality equals 73 percent OEE">
+                <span class="oee-term"><strong>90%</strong><span>Availability</span></span>
+                <i aria-hidden="true">×</i>
+                <span class="oee-term"><strong>90%</strong><span>Performance</span></span>
+                <i aria-hidden="true">×</i>
+                <span class="oee-term"><strong>90%</strong><span>Quality</span></span>
+                <i aria-hidden="true">=</i>
+                <span class="oee-term"><strong class="result">73%</strong><span>OEE</span></span>
+              </div>
             </div>
             <div class="oee-benchmarks" aria-label="OEE benchmark context">
               <div><strong>55-60%</strong><span>typical manufacturing OEE</span></div>
@@ -336,7 +385,7 @@
             </div>
           </div>
 
-          <p class="evidence-source reveal">
+          <p class="sources reveal">
             <span>Sources</span>
             <a href="https://www.l2l.com/blog/manufacturing-data-report-press-release" target="_blank" rel="noopener">L2L manufacturing data survey, May 2026</a>
             <a href="https://www.leanproduction.com/oee/" target="_blank" rel="noopener">LeanProduction OEE benchmarks</a>
@@ -345,82 +394,175 @@
         </div>
       </section>
 
-      <section class="section-pad section-dark data-section" id="data">
-        <div class="container-xxl">
-          <div class="row g-5 align-items-center">
-            <div class="col-lg-5 reveal">
-              <div class="section-kicker"><span></span>Data sovereignty</div>
-              <h2>Your data never leaves your floor.</h2>
-              <p class="lead-copy muted">
-                FactoSense captures, processes and stores operational data
-                locally, so your factory stays in control.
-              </p>
-            </div>
-            <div class="col-lg-7">
-              <div class="architecture-card reveal" aria-label="On premises architecture diagram">
-                <div class="premises-box">
-                  <span>Your premises</span>
-                  <div class="architecture-flow">
-                    <div>Machines</div>
-                    <i></i>
-                    <div>Edge device</div>
-                    <i></i>
-                    <div>FactoSense processing</div>
-                    <i></i>
-                    <div>Dashboards + intelligence</div>
-                  </div>
-                </div>
+      <section class="section section-soft" id="data">
+        <div class="container grid-5-7">
+          <div class="section-head reveal">
+            <span class="eyebrow">Data sovereignty</span>
+            <h2 class="display">Your data never leaves your floor.</h2>
+            <p class="lead">
+              FactoSense captures, processes and stores operational data
+              locally, so your factory stays in control.
+            </p>
+          </div>
+          <div class="premises reveal" aria-label="On premises architecture diagram">
+            <span class="premises-tag">Your premises</span>
+            <svg viewBox="0 0 640 380" role="img" aria-label="A robot arm and conveyor connected through a secure edge device to dashboards and an on-premises server" class="premises-illustration fsi">
+            <defs><clipPath id="fsiBelt"><rect x="172" y="230" width="276" height="62"></rect></clipPath></defs>
+            <path d="M24 356H616" stroke="#e3e7ea" stroke-width="2" stroke-linecap="round"></path>
+            <ellipse cx="100" cy="350" rx="70" ry="7" fill="#eef1f3"></ellipse>
+            <ellipse cx="310" cy="356" rx="150" ry="6" fill="#eef1f3"></ellipse>
+            <ellipse cx="528" cy="352" rx="78" ry="6" fill="#eef1f3"></ellipse>
+            
+            <!-- network links -->
+            <path class="flowd" d="M198 140 L210 116" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M264 90 L342 62" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M258 118 L380 140" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M380 106 L380 140" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M380 140 L380 230" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M418 62 L512 90" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="flowd" d="M540 127 L540 168" stroke="#f58214" stroke-width="1.6" stroke-linecap="round" fill="none"></path><path class="pkt" d="M198 140 L210 116" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 0s;"></path><path class="pkt" d="M264 90 L342 62" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 0.4s;"></path><path class="pkt" d="M258 118 L380 140" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 0.8s;"></path><path class="pkt" d="M380 106 L380 140" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 1.2s;"></path><path class="pkt" d="M380 140 L380 230" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 1.4s;"></path><path class="pkt" d="M418 62 L512 90" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 0.6s;"></path><path class="pkt" d="M540 127 L540 168" stroke="#f58214" stroke-width="3.2" stroke-linecap="round" fill="none" style="animation-delay: 1.0s;"></path>
+            
+            <!-- hex: secure edge -->
+            <polygon class="pulse" points="235,61 264.4,78.0 264.4,112.0 235,129 205.6,112.0 205.6,78.0" fill="none" stroke="#f58214" stroke-width="2"></polygon>
+            <polygon points="235,61 264.4,78.0 264.4,112.0 235,129 205.6,112.0 205.6,78.0" fill="#ffffff" stroke="#4a5864" stroke-width="1.8" stroke-linejoin="round"></polygon>
+            <path d="M235 76L251 82V96C251 106 244 112 235 116C226 112 219 106 219 96V82Z" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6" stroke-linejoin="round"></path>
+            <path class="shackle" d="M230.5 94V90a4.5 4.5 0 0 1 9 0V94" fill="none" stroke="#4a5864" stroke-width="1.8"></path>
+            <rect x="227" y="94" width="16" height="12" rx="2" fill="#4a5864"></rect>
+            <circle cx="235" cy="99.5" r="1.8" fill="#f58214"></circle>
+            
+            <!-- hex: dashboard -->
+            <polygon class="pulse p2" points="380,18 418.1,40.0 418.1,84.0 380,106 341.9,84.0 341.9,40.0" fill="none" stroke="#f58214" stroke-width="2"></polygon>
+            <polygon points="380,18 418.1,40.0 418.1,84.0 380,106 341.9,84.0 341.9,40.0" fill="#ffffff" stroke="#4a5864" stroke-width="1.8" stroke-linejoin="round"></polygon>
+            <rect x="356" y="40" width="48" height="32" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect>
+            <path d="M380 72V80M369 81H391" stroke="#4a5864" stroke-width="1.6" stroke-linecap="round"></path>
+            <rect class="bar b1" x="384" y="60" width="4" height="8" fill="#f58214" opacity="0.55"></rect>
+            <rect class="bar b2" x="390" y="55" width="4" height="13" fill="#f58214" opacity="0.75"></rect>
+            <rect class="bar b3" x="396" y="49" width="4" height="19" fill="#f58214"></rect>
+            <polyline class="chart-line" points="361,66 369,58 375,62 383,51 391,46" fill="none" stroke="#f58214" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            
+            <!-- hex: on-prem records -->
+            <polygon class="pulse p3" points="540,63 567.7,79.0 567.7,111.0 540,127 512.3,111.0 512.3,79.0" fill="none" stroke="#f58214" stroke-width="2"></polygon>
+            <polygon points="540,63 567.7,79.0 567.7,111.0 540,127 512.3,111.0 512.3,79.0" fill="#ffffff" stroke="#4a5864" stroke-width="1.8" stroke-linejoin="round"></polygon>
+            <rect x="527" y="79" width="26" height="32" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect>
+            <path d="M532 87H548M532 93H548M532 99H548M532 105H543" stroke="#4a5864" stroke-width="1.3" stroke-linecap="round"></path>
+            
+            <!-- junction + node dots -->
+            <circle cx="380" cy="140" r="6" fill="#ffffff" stroke="#f58214" stroke-width="2"></circle>
+            <circle cx="264" cy="90" r="3.5" fill="#f58214"></circle>
+            <circle cx="258" cy="118" r="3.5" fill="#f58214"></circle>
+            <circle cx="418" cy="62" r="3.5" fill="#f58214"></circle>
+            <circle cx="512" cy="90" r="3.5" fill="#f58214"></circle>
+            
+            <!-- conveyor -->
+            <path d="M196 316V352M424 316V352M196 336H424M210 352H182M438 352H410" stroke="#4a5864" stroke-width="1.8" stroke-linecap="round"></path>
+            <rect x="170" y="290" width="280" height="26" rx="13" fill="#ffffff" stroke="#4a5864" stroke-width="1.8"></rect>
+            <g class="roller"><circle cx="188" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M183 303H193M188 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="228" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M223 303H233M228 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="268" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M263 303H273M268 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="308" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M303 303H313M308 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="348" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M343 303H353M348 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="388" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M383 303H393M388 298V308" stroke="#4a5864" stroke-width="1.2"></path></g><g class="roller"><circle cx="428" cy="303" r="8" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle><path d="M423 303H433M428 298V308" stroke="#4a5864" stroke-width="1.2"></path></g>
+            <g clip-path="url(#fsiBelt)"><g class="belt"><g><rect x="106" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M106 270H144" stroke="#4a5864" stroke-width="1.2"></path><rect x="118" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g><g><rect x="176" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M176 270H214" stroke="#4a5864" stroke-width="1.2"></path><rect x="188" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g><g><rect x="246" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M246 270H284" stroke="#4a5864" stroke-width="1.2"></path><rect x="258" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g><g><rect x="316" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M316 270H354" stroke="#4a5864" stroke-width="1.2"></path><rect x="328" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g><g><rect x="386" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M386 270H424" stroke="#4a5864" stroke-width="1.2"></path><rect x="398" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g><g><rect x="456" y="262" width="38" height="28" rx="3" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.6"></rect><path d="M456 270H494" stroke="#4a5864" stroke-width="1.2"></path><rect x="468" y="276" width="14" height="7" rx="1.5" fill="#ffffff" stroke="#4a5864" stroke-width="1"></rect></g></g></g>
+            
+            <!-- conveyor sensors -->
+            <path d="M246 212V238" stroke="#f58214" stroke-width="1.4" stroke-dasharray="2 4"></path>
+            <circle class="ping" cx="246" cy="240" r="7" fill="none" stroke="#f58214" stroke-width="2"></circle>
+            <circle cx="246" cy="240" r="3.5" fill="#f58214"></circle>
+            <circle class="ping pg2" cx="380" cy="238" r="8" fill="none" stroke="#f58214" stroke-width="2"></circle>
+            <circle cx="380" cy="238" r="4" fill="#f58214"></circle>
+            
+            <!-- robot arm -->
+            <rect x="48" y="326" width="104" height="22" rx="4" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.8"></rect>
+            <rect x="68" y="282" width="64" height="46" rx="10" fill="#ffffff" stroke="#4a5864" stroke-width="1.8"></rect>
+            <path d="M80 296H120M80 306H120" stroke="#4a5864" stroke-width="1.2"></path>
+            <g class="arm">
+            <rect x="86" y="150" width="28" height="128" rx="14" fill="#ffffff" stroke="#4a5864" stroke-width="1.8"></rect>
+            <path d="M94 170V258" stroke="#4a5864" stroke-width="1.2" stroke-linecap="round"></path>
+            <circle cx="100" cy="272" r="17" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.8"></circle>
+            <circle cx="100" cy="272" r="6" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle>
+            <g class="fore">
+            <rect x="100" y="139" width="98" height="22" rx="11" fill="#ffffff" stroke="#4a5864" stroke-width="1.8"></rect>
+            <path d="M118 146H178" stroke="#4a5864" stroke-width="1.2" stroke-linecap="round"></path>
+            <circle cx="100" cy="150" r="15" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.8"></circle>
+            <circle cx="100" cy="150" r="5" fill="#ffffff" stroke="#4a5864" stroke-width="1.6"></circle>
+            <circle cx="196" cy="150" r="10" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.8"></circle>
+            <g class="grip">
+            <path d="M190 158L182 176L188 182M202 158L210 176L204 182" fill="none" stroke="#4a5864" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+            <circle cx="198" cy="140" r="3.5" fill="#f58214"></circle>
+            </g>
+            </g>
+            
+            <!-- server cabinet -->
+            <rect x="466" y="166" width="124" height="184" rx="4" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.8"></rect>
+            <rect x="473" y="174" width="53" height="168" rx="2" fill="#ffffff" stroke="#4a5864" stroke-width="1.4"></rect>
+            <rect x="531" y="174" width="52" height="168" rx="2" fill="#ffffff" stroke="#4a5864" stroke-width="1.4"></rect>
+            <path d="M480 186H519M480 192H519M480 198H519M480 204H519M480 210H519" stroke="#4a5864" stroke-width="1.1"></path>
+            <path d="M480 300H519M480 306H519M480 312H519M480 318H519M480 324H519" stroke="#4a5864" stroke-width="1.1"></path>
+            <rect x="538" y="184" width="12" height="10" rx="2" fill="#f58214"></rect>
+            <circle class="led" cx="542" cy="208" r="3" fill="#2ad2cc"></circle>
+            <circle class="led l2" cx="552" cy="208" r="3" fill="#f58214"></circle>
+            <circle class="led l3" cx="562" cy="208" r="3" fill="#2ad2cc"></circle>
+            <rect x="538" y="222" width="38" height="22" rx="2" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.2"></rect>
+            <rect x="538" y="252" width="38" height="22" rx="2" fill="#f1f4f6" stroke="#4a5864" stroke-width="1.2"></rect>
+            <path d="M543 233H571M543 263H571M538 300H576M538 306H576M538 312H576M538 318H576M538 324H576" stroke="#4a5864" stroke-width="1.1"></path>
+            <path d="M579 236V262" stroke="#4a5864" stroke-width="2.4" stroke-linecap="round"></path>
+            <rect x="472" y="350" width="14" height="6" rx="1" fill="#4a5864"></rect>
+            <rect x="570" y="350" width="14" height="6" rx="1" fill="#4a5864"></rect>
+            <circle cx="540" cy="168" r="4" fill="#f58214"></circle>
+            </svg>
+            <div class="flow">
+              <div class="flow-node card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#007a76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9l5 3V9l5 3V5h8v15z"/></svg>Machines
+              </div>
+              <div class="flow-line" aria-hidden="true"><span></span></div>
+              <div class="flow-node card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#007a76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h.01M12 10h4M8 14h8"/></svg>Edge device
+              </div>
+              <div class="flow-line" aria-hidden="true"><span></span></div>
+              <div class="flow-node flow-node-core card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>FactoSense processing
+              </div>
+              <div class="flow-line flow-line-warm" aria-hidden="true"><span></span></div>
+              <div class="flow-node card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f58214" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Dashboards + intelligence
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section-pad connectivity" id="connectivity">
-        <div class="container-xxl">
-          <div class="row g-5 align-items-start">
-            <div class="col-lg-6 reveal">
-              <div class="section-kicker"><span></span>Connectivity</div>
-              <h2>Built for Your Industrial Ecosystem</h2>
-              <p class="vendor-claim">Any machine. Any PLC. Any vendor.</p>
-              <p class="lead-copy">
-                If it speaks OPC-UA, we connect to it. FactoSense works with
-                the PLCs, automation vendors, machines and protocols already on
-                your floor.
-              </p>
-            </div>
-            <div class="col-lg-6">
-              <div class="vendor-panel reveal" data-vendor-wall aria-label="Supported PLC and automation vendors"></div>
-            </div>
+      <section class="section section-dark connectivity" id="connectivity">
+        <div class="container grid-2 align-end">
+          <div class="section-head reveal">
+            <span class="eyebrow">Connectivity</span>
+            <h2 class="display">Built for Your Industrial Ecosystem</h2>
+          </div>
+          <div class="connectivity-copy reveal">
+            <p class="vendor-claim">Any machine. Any PLC. Any vendor.</p>
+            <p class="lead">
+              If it speaks OPC-UA, we connect to it. FactoSense works with
+              the PLCs, automation vendors, machines and protocols already on
+              your floor.
+            </p>
           </div>
         </div>
+        <div class="marquee" data-vendor-wall aria-label="Supported PLC and automation vendors"></div>
       </section>
 
-      <section class="section-pad section-dark platform-live" id="platform">
-        <div class="container-xxl">
-          <div class="row g-4 align-items-end mb-5">
-            <div class="col-lg-8 reveal">
-              <div class="section-kicker"><span></span>The platform</div>
-              <h2>Everything in this section is live today.</h2>
-            </div>
+      <section class="section section-soft platform" id="platform">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="container stack">
+          <div class="section-head reveal">
+            <span class="eyebrow">The platform</span>
+            <h2 class="display">Everything in this section is live today.</h2>
           </div>
 
-          <div class="product-preview reveal">
-            <div class="product-preview-bar">
+          <div class="product-frame reveal">
+            <div class="product-bar">
               <div>
                 <span class="live-dot"></span>
                 <strong>Operational intelligence dashboard</strong>
               </div>
-              <div class="product-preview-modes" aria-label="Dashboard view options">
+              <div class="product-modes" aria-label="Dashboard view options">
                 <span class="active">OEE</span>
                 <span>Downtime</span>
                 <span>Quality</span>
                 <span>Speed</span>
               </div>
-              <a class="product-preview-cta" href="#demo">Request a demo</a>
+              <a class="btn btn-primary" href="#demo">Request a demo</a>
             </div>
-            <div class="product-preview-grid">
-              <figure class="dashboard-shot">
+            <div class="product-shots">
+              <figure>
                 <picture>
                   <source srcset="assets/product/factosense-dashboard.webp" type="image/webp">
                   <img src="assets/product/factosense-dashboard.png"
@@ -431,7 +573,7 @@
                   decoding="async">
                 </picture>
               </figure>
-              <figure class="dashboard-shot dashboard-shot-light">
+              <figure class="shot-light">
                 <picture>
                   <source srcset="assets/product/factosense-dashboard-light.webp" type="image/webp">
                   <img src="assets/product/factosense-dashboard-light.png"
@@ -446,64 +588,72 @@
           </div>
 
           <div class="module-grid">
-            <article class="module-card reveal">
+            <article class="card card-light module reveal">
+              <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg></span>
               <small>Edges</small>
               <h3>Monitor edge infrastructure.</h3>
             </article>
-            <article class="module-card reveal">
+            <article class="card card-light module reveal">
+              <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V9l5 3V9l5 3V5h8v15z"/></svg></span>
               <small>Machines</small>
               <h3>Your connected asset registry.</h3>
             </article>
-            <article class="module-card reveal">
+            <article class="card card-light module reveal">
+              <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h6M4 12h6M4 18h6M14 6h6M14 12h6M14 18h6M10 6l4 6M10 12l4 6"/></svg></span>
               <small>Recipes</small>
               <h3>Map machine data without code.</h3>
             </article>
-            <article class="module-card reveal">
+            <article class="card card-light module reveal">
+              <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg></span>
               <small>Dashboards</small>
               <h3>Turn live signals into operational views.</h3>
             </article>
-            <article class="module-card reveal">
+            <article class="card card-light module reveal">
+              <span class="icon-tile"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M9 17v-3M12 17v-6M15 17v-4"/></svg></span>
               <small>Reports</small>
               <h3>Operational reporting from live production data.</h3>
             </article>
-            <article class="module-proof reveal">
-              <div class="proof-window">
-                <div class="proof-toolbar"><span></span><span></span><span></span></div>
-                <div class="proof-metrics">
-                  <strong>86%</strong>
-                  <strong>94%</strong>
-                  <strong>99%</strong>
-                </div>
-                <div class="proof-lines"><span></span><span></span><span></span><span></span></div>
+            <article class="card module-proof reveal" aria-hidden="true">
+              <div class="proof-dots"><span></span><span></span><span></span></div>
+              <div class="proof-metrics">
+                <strong>86%</strong>
+                <strong>94%</strong>
+                <strong>99%</strong>
+              </div>
+              <div class="proof-bars">
+                <div class="meter"><i style="--v: 86%"></i></div>
+                <div class="meter"><i style="--v: 64%"></i></div>
+                <div class="meter"><i style="--v: 74%"></i></div>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section-pad roadmap section-dark" id="roadmap">
-        <div class="container-xxl">
-          <div class="section-heading-block reveal mb-5">
-            <div class="section-kicker"><span></span>Roadmap</div>
-            <h2>Visibility today. Intelligence on your own data next.</h2>
-            <p class="lead-copy muted">
+      <section class="section section-dark" id="roadmap">
+        <div class="container stack">
+          <div class="section-head reveal">
+            <span class="eyebrow">Roadmap</span>
+            <h2 class="display">Visibility today. Intelligence on your own data next.</h2>
+            <p class="lead">
               A practical path from live visibility to better decisions,
               built on operational history your team owns.
             </p>
           </div>
 
-          <div class="roadmap-grid">
-            <article class="road-card reveal">
+          <div class="road-line" aria-hidden="true"><span></span></div>
+          <div class="grid-3">
+            <article class="card road-card road-card-now reveal">
               <small>Now</small>
               <h3>Connect and monitor</h3>
               <p>Live operating visibility, assets, dashboards, users and workspaces.</p>
             </article>
-            <article class="road-card reveal featured">
+            <article class="card road-card reveal">
               <small>Next</small>
               <h3>Report and optimize</h3>
               <p>Dynamic reporting, OEE, threshold rules, alarms, storage and cross-site context.</p>
             </article>
-            <article class="road-card reveal">
+            <article class="card road-card road-card-future reveal">
               <small>Future</small>
               <h3>AI on your data, on your premises</h3>
               <p>Downtime risk, component health, maintenance recommendations and answers drawn from your own operational history.</p>
@@ -512,40 +662,39 @@
         </div>
       </section>
 
-      <section class="section-pad about" id="about">
-        <div class="container-xxl">
-          <div class="about-grid">
-            <div class="reveal">
-              <div class="section-kicker"><span></span>About</div>
-              <h2>15+ years building manufacturing software.</h2>
-            </div>
-            <div class="about-copy reveal">
-              <p>
-                FactoSense is built by Funoon Lab. We have spent 15+
-                years making software for manufacturers: people who have no
-                patience for anything that does not work on day one.
-              </p>
-              <p>
-                FactoSense is what we would build if we started over: everything
-                we have learned, none of the vendor lock-in, none of the
-                compromises.
-              </p>
-              <a href="mailto:info@funoonlab.com">info@funoonlab.com</a>
-            </div>
+      <section class="section section-white" id="about">
+        <div class="container grid-2 align-start reveal">
+          <div class="section-head">
+            <span class="eyebrow">About</span>
+            <h2 class="display">15+ years building manufacturing software.</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              FactoSense is built by Funoon Lab. We have spent 15+
+              years making software for manufacturers: people who have no
+              patience for anything that does not work on day one.
+            </p>
+            <p>
+              FactoSense is what we would build if we started over: everything
+              we have learned, none of the vendor lock-in, none of the
+              compromises.
+            </p>
+            <a href="mailto:info@funoonlab.com">info@funoonlab.com</a>
           </div>
         </div>
       </section>
 
-      <section class="cta" id="demo">
-        <div class="container-xxl reveal">
-          <div class="cta-panel demo-panel">
-            <div class="demo-copy">
-              <img src="assets/logo/fs-logo-light.png" alt="FactoSense" width="1040" height="194" loading="lazy" decoding="async">
-              <h2>Let's connect your first machine.</h2>
-              <p>Fifteen minutes. No commitment. See your own data live.</p>
-            </div>
-            <form class="demo-form" id="demoForm">
-              <div class="form-grid">
+      <section class="demo" id="demo">
+        <div class="container reveal">
+          <div class="demo-shell">
+            <div class="ring" aria-hidden="true"></div>
+            <div class="grid-2 demo-panel">
+              <div class="demo-copy">
+                <img src="assets/logo/fs-logo-light.png" alt="FactoSense" width="1040" height="194" loading="lazy" decoding="async">
+                <h2>Let's connect your first machine.</h2>
+                <p>Fifteen minutes. No commitment. See your own data live.</p>
+              </div>
+              <form class="demo-form" id="demoForm">
                 <label>
                   Full name
                   <input type="text" name="name" id="name" autocomplete="name" required>
@@ -566,25 +715,24 @@
                   What should FactoSense help with first?
                   <textarea name="message" id="message" rows="4" placeholder="A machine, dynamic reporting, OEE, visibility, downtime, maintenance planning..." required></textarea>
                 </label>
-              </div>
-              <button class="btn btn-fs btn-lg w-100" type="submit">Send demo request</button>
-            </form>
-
+                <button class="btn btn-primary btn-lg" type="submit">Send demo request</button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container-xxl">
+      <div class="container">
         <div class="footer-main">
           <div class="footer-brand">
             <img src="assets/logo/fs-logo-light.png" alt="FactoSense" width="1040" height="194" loading="lazy" decoding="async">
             <p>Connect machines, edge devices and teams through local operational intelligence that stays on your factory floor.</p>
             <div class="footer-proof">
-              <span><i class="bi bi-hdd-network" aria-hidden="true"></i>On-premises deployment</span>
-              <span><i class="bi bi-diagram-3" aria-hidden="true"></i>Vendor-neutral PLC connectivity</span>
-              <span><i class="bi bi-shield-check" aria-hidden="true"></i>Factory data stays under your control</span>
+              <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/></svg>On-premises deployment</span>
+              <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M5 17v-3h14v3"/></svg>Vendor-neutral PLC connectivity</span>
+              <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Factory data stays under your control</span>
             </div>
           </div>
 
@@ -598,7 +746,7 @@
             <a href="#demo">Book a Demo</a>
           </nav>
 
-          <nav class="footer-column footer-column-wide" aria-label="Platform">
+          <nav class="footer-column" aria-label="Platform">
             <h2>Platform</h2>
             <div class="footer-link-grid">
               <a href="#connectivity"><span>Connectivity</span>Any PLC, machine or automation vendor</a>
@@ -613,25 +761,24 @@
 
           <div class="footer-column footer-contact">
             <h2>Contacts</h2>
-            <a class="footer-contact-link" href="mailto:info@funoonlab.com"><i class="bi bi-envelope" aria-hidden="true"></i>info@funoonlab.com</a>
-            <a class="footer-contact-link" href="https://funoonlab.com" target="_blank" rel="noopener"><i class="bi bi-globe2" aria-hidden="true"></i>funoonlab.com</a>
+            <a class="footer-contact-link" href="mailto:info@funoonlab.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@funoonlab.com</a>
+            <a class="footer-contact-link" href="https://funoonlab.com" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ad2cc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>funoonlab.com</a>
 
             <h2>Inquiries</h2>
-            <a class="footer-cta" href="#demo"><i class="bi bi-chat-dots" aria-hidden="true"></i>Request a demo</a>
+            <a class="btn btn-primary" href="#demo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Request a demo</a>
           </div>
         </div>
 
         <div class="footer-bottom">
           <span>© 2026 FactoSense. Powered by Funoon Lab.</span>
           <div class="footer-social" aria-label="FactoSense links">
-            <a href="mailto:info@funoonlab.com" aria-label="Email FactoSense"><i class="bi bi-envelope" aria-hidden="true"></i></a>
-            <a href="https://funoonlab.com" target="_blank" rel="noopener" aria-label="Visit Funoon Lab website"><i class="bi bi-globe2" aria-hidden="true"></i></a>
+            <a href="mailto:info@funoonlab.com" aria-label="Email FactoSense"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+            <a href="https://funoonlab.com" target="_blank" rel="noopener" aria-label="Visit Funoon Lab website"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></a>
           </div>
         </div>
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
