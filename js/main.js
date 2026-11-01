@@ -154,6 +154,21 @@
 
 
 
+  function setupMotionPausing() {
+    if (reduceMotion || !("IntersectionObserver" in window)) return;
+
+    // Looping animations in sections that are off screen are paused (see .is-offscreen in styles.css).
+    const sections = document.querySelectorAll(".hero, .section, .demo");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => entry.target.classList.toggle("is-offscreen", !entry.isIntersecting));
+      },
+      { rootMargin: "100px 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
   function setupVendorWall() {
     const wall = document.querySelector("[data-vendor-wall]");
     if (!wall) return;
@@ -252,6 +267,7 @@
     setupNav();
     setupCounters();
     setupVendorWall();
+    setupMotionPausing();
     setupDemoForm();
   });
 })();

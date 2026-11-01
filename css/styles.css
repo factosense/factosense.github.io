@@ -169,9 +169,7 @@ p {
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--line-dark);
-  background: rgba(0, 17, 33, 0.94);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  background: rgba(0, 17, 33, 0.96);
   transition: box-shadow 0.3s;
 }
 
@@ -398,10 +396,19 @@ p {
 }
 
 .live-dot {
+  position: relative;
   display: inline-block;
   flex-shrink: 0;
   width: 8px;
   height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.live-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
   background: var(--teal);
   animation: ping 1.8s ease-out infinite;
@@ -431,8 +438,8 @@ p {
 .aurora {
   position: absolute;
   border-radius: 50%;
-  filter: blur(20px);
   pointer-events: none;
+  will-change: transform;
 }
 
 .aurora-teal {
@@ -572,8 +579,9 @@ p {
 .ring {
   position: absolute;
   inset: -60%;
-  background: conic-gradient(from var(--a), rgba(42, 210, 204, 0) 0deg, rgba(42, 210, 204, 0) 220deg, #2ad2cc 290deg, #f58214 330deg, rgba(42, 210, 204, 0) 360deg);
+  background: conic-gradient(rgba(42, 210, 204, 0) 0deg, rgba(42, 210, 204, 0) 220deg, #2ad2cc 290deg, #f58214 330deg, rgba(42, 210, 204, 0) 360deg);
   animation: spin 6s linear infinite;
+  will-change: transform;
 }
 
 .panel {
@@ -691,11 +699,19 @@ p {
 
 .chart .scan {
   position: absolute;
+  inset: 0;
+  animation: scan 4.5s linear infinite;
+  will-change: transform;
+}
+
+.chart .scan::after {
+  content: "";
+  position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
   width: 1px;
   background: linear-gradient(180deg, rgba(156, 239, 237, 0), rgba(156, 239, 237, 0.7), rgba(156, 239, 237, 0));
-  animation: scan 4.5s linear infinite;
 }
 
 .signal-feed {
@@ -1029,9 +1045,21 @@ p {
   border: 0;
   background: var(--orange);
   color: var(--ink);
+  position: relative;
+  isolation: isolate;
   font-size: 30px;
   font-weight: 700;
-  animation: glow 2.6s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(245, 130, 20, 0.35);
+}
+
+.oee-term .result::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--orange);
+  z-index: -1;
+  animation: glow 2.6s ease-out infinite;
 }
 
 .oee-term .result + span {
@@ -1246,6 +1274,7 @@ p {
   gap: 16px;
   width: max-content;
   animation: marq 38s linear infinite;
+  will-change: transform;
 }
 
 .marquee-track-reverse {
@@ -1285,8 +1314,8 @@ p {
   height: 600px;
   border-radius: 50%;
   background: radial-gradient(closest-side, rgba(0, 172, 167, 0.16), rgba(0, 172, 167, 0));
-  filter: blur(20px);
   animation: drift1 16s ease-in-out infinite;
+  will-change: transform;
   pointer-events: none;
 }
 
@@ -1821,6 +1850,14 @@ p {
   color: var(--on-dark);
 }
 
+/* ---------- Off-screen sections pause their loops ---------- */
+
+.is-offscreen *,
+.is-offscreen *::before,
+.is-offscreen *::after {
+  animation-play-state: paused !important;
+}
+
 /* ---------- Scroll reveal ---------- */
 
 .supports-reveal .reveal {
@@ -1856,30 +1893,21 @@ p {
 
 /* ---------- Keyframes ---------- */
 
-@property --a {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
 @keyframes up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 @keyframes drift1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(120px, 60px) scale(1.15); } }
 @keyframes drift2 { 0%, 100% { transform: translate(0, 0) scale(1.1); } 50% { transform: translate(-140px, -40px) scale(0.95); } }
 @keyframes shine { to { background-position: 300% 0; } }
 @keyframes draw-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(42, 210, 204, 0.6); } 100% { box-shadow: 0 0 0 10px rgba(42, 210, 204, 0); } }
+@keyframes ping { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(3.4); opacity: 0; } }
 @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes dash { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
-@keyframes scan { from { left: 0%; } to { left: 100%; } }
+@keyframes scan { from { transform: translateX(-100%); } to { transform: translateX(0); } }
 @keyframes marq { to { transform: translateX(-50%); } }
-@keyframes pkt { from { left: -8px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { left: 100%; opacity: 0; } }
-@keyframes spin { to { --a: 360deg; } }
-@keyframes glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 130, 20, 0.5), 0 10px 40px rgba(245, 130, 20, 0.35); }
-  50% { box-shadow: 0 0 0 14px rgba(245, 130, 20, 0), 0 10px 60px rgba(245, 130, 20, 0.55); }
-}
-@keyframes beam { from { left: -30%; } to { left: 100%; } }
+@keyframes pkt { from { transform: translateX(-8px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { transform: translateX(40px); opacity: 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes glow { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(1.45); opacity: 0; } }
+@keyframes beam { from { transform: translateX(-100%); } to { transform: translateX(333%); } }
 
 @keyframes fsi-move { from { transform: translateX(0); } to { transform: translateX(70px); } }
 @keyframes fsi-spin { to { transform: rotate(360deg); } }
@@ -2151,7 +2179,7 @@ p {
   }
 }
 
-@keyframes pkt-down { from { top: -8px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { top: 100%; opacity: 0; } }
+@keyframes pkt-down { from { transform: translateY(-8px); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { transform: translateY(24px); opacity: 0; } }
 
 @media (prefers-reduced-motion: reduce) {
   html {
